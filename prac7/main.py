@@ -12,6 +12,11 @@ def result():
         result=dict()
         result['Name']=request.form.get('name')
         result['Student Number']=request.form.get('StudentNumber')
+        # added code
+        result['gender'] = request.form.get('gender') #radio
+        result['major'] = request.form.get('major') #select
+        result['programming_language'] = request.form.getlist('programming_language') #checkbox
+        # -----------------
         return render_template('result.html',result=result)
 
 
