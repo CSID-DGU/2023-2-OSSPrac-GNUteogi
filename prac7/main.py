@@ -13,9 +13,10 @@ def result():
         result['Name']=request.form.get('name')
         result['Student Number']=request.form.get('StudentNumber')
         # added code
-        result['gender'] = request.form.get('gender') #radio
-        result['major'] = request.form.get('major') #select
-        result['programming_language'] = request.form.getlist('programming_language') #checkbox
+        result['Gender'] = request.form.get('gender') #radio
+        result['Major'] = request.form.get('major') #select
+        programming = request.form.getlist('programming_language') #checkbox
+        result['Language'] = ', '.join(programming)
         # -----------------
         return render_template('result.html',result=result)
 
