@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <h1> HTML input & output practice</h1>
+    <h1>HTML input & output practice</h1>
     <form action="/result" method="POST">
-        <p><b>* Name</b> <input type='text' id='name' name='name' /></p>
-        <p><b>* Student Number</b> <input type='text' id='StudentNumber' name='StudentNumber' /></p>
+        <p><b>* Name</b> <input type="text" id="name" name="name" /></p>
+        <p><b>* Student Number</b> <input type="text" id="StudentNumber" name="StudentNumber" /></p>
         <p><b>Gender</b></p>
-        <label><input type='radio' name="gender" value="male">Male</label>
-        <label><input type='radio' name="gender" value="female">Female</label>
-        <p><b>Programing Languages</b></p>
-        <p><b>Major</b><input typr='text' id='major' name='major'/></p>
-        <label><input type="checkbox" name="programing_laguage" value="python">Python</label>
-        <label><input type="checkbox" name="programing_laguage" value="java">Java</label>
-        <button type='submit' name='submit' value='submit'>submit</button>
+        <label for="male"><input type="radio" id="male" name="gender" value="male">Male</label>
+        <label for="female"><input type="radio" id="female" name="gender" value="female">Female</label>
+        <p><b>Programming Languages</b></p>
+        <p><b>Major</b><input type="text" id="major" name="major" /></p>
+        <label for="python"><input type="checkbox" id="python" name="programming_language" value="python">Python</label>
+        <label for="java"><input type="checkbox" id="java" name="programming_language" value="java">Java</label>
+        <label for="HTML"><input type="checkbox" id="HTML" name="programming_language" value="HTML">HTML</label>
+        <label for="C++"><input type="checkbox" id="C++" name="programming_language" value="C++">C++</label>
+        <br>
+        <button type="submit" name="submit" value="submit">Submit</button>
     </form>
 </body>
 </html>
