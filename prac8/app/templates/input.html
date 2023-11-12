@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>HTML Input Form</title>
+</head>
+<body>
+    <h1>HTML Input & Output Practice</h1>
+    <form action='/result' method='POST'>
+        <p><b>* Name:</b> <input type='text' id='name' name='name' required/></p>
+        <p><b>* Student Number:</b> <input type='text' id='studentNumber' name='studentNumber' required/></p>
+        <p><b>* Major:</b> <input type='text' id='major' name='major' required/></p>
+        <p><b>* Email:</b> <input type='text' id='email' name='email' required/></p>
+        <p><b>Gender:</b></p>
+        <label><input type='radio' id='male' name='gender' value='male'>Male</label>
+        <label><input type='radio' id='female' name='gender' value='female'>Female</label>
+        <p><b>Programming Languages:</b></p>
+        <label><input type='checkbox' id='python' name='programmingLanguage' value='python'>Python</label>
+        <label><input type='checkbox' id='java' name='programmingLanguage' value='java'>Java</label>
+        <label><input type='checkbox' id='html' name='programmingLanguage' value='html'>HTML</label>
+        <label><input type='checkbox' id='cPlusPlus' name='programmingLanguage' value='c++'>C++</label>
+        <br><br>
+        <button type='submit' name='submit' value='submit'>Submit</button>
+    </form>
+</body>
+</html>
