@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+    
+    triggers {
+        pollSCM('*/3 * * * *')
+    }
+    
+    environment {
+        DOCKER = credentials('Docker')
+    }
+    
+    stages {
+        stage('Prepare and Build') {
+            agent any
+            
+            steps {
+                git url : 'https://github.com/CSID-DGU/2023-2-OSSPrac-GNUteogi-07',
+                branch : 'main',
+                credentialsId: 'GithubAT'
+                dir('teamhw6/app') {
+                    sh 'ls -l'
+                    sh 'docker-compose build app'
+                }
+            }
+        }
+        
+        //stage('Build') {
+        //    steps {
+        //    }
+        //}
+        
+        stage('Tag') {
+            steps {
+                script {
+                    sh "docker tag ${DOCKER_USR}/teamhw6 ${DOCKER_USR}/teamhw6:${BUILD_NUMBER}"
+                }
+            }
+        }
+        
+        stage('Push') {
+            steps {
+                script {
+                    sh "docker login -u ${DOCKER_USR} -p ${DOCKER_PSW}"
+                    sh "docker push ${DOCKER_USR}/teamhw6:${BUILD_NUMBER}"
+                }
+            }
+        }
+    }
+}
