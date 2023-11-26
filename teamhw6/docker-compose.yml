@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     build: .
-    image: yyg1006/ossprac:3.0 #본인 dockerhub 계정으로 변경
+    image: minheonjun/teamhw6 #본인 dockerhub 계정으로 변경
     #docker 아이디 / dockerhub repo : tag
     ports:
       - "8080:80"
