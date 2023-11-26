@@ -21,7 +21,7 @@ def result():
         result['Email'] = f"{email}@{email_domain}"
         programming = request.form.getlist('programming_language') #checkbox
         result['Language'] = ', '.join(programming)
-        # -----------------
+        # -------------------
         return render_template('result.html',result=result)
 
 
